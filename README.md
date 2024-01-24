@@ -2,8 +2,9 @@
 Recipe API project
 
 Dockerfile 
-    RUN python -m venv /py &&\   #create virtual enviroment
-    #TODO Upgrade de pip (python paquege managemen) on the virtual enviroment just create   
+    #create virtual enviroment
+    RUN python -m venv /py &&\   
+    #TODO Upgrade de pip (python packague management) on the virtual enviroment just create   
     /py/bin/pip install --upgrade pip && \
     # TODO install list of requiremtns inside the docker images (virtual enviroment)
     /py/bin/pip install -r /tmp/requirements.txt && \

@@ -1,5 +1,5 @@
 FROM python:3.9-alpine3.13
-LABEL mantainer="Crzyfsn"
+LABEL maintainer="leong87"
 
 ENV PYTHONUNBUFFERED 1
 
@@ -10,7 +10,7 @@ WORKDIR /app
 EXPOSE 8000
 
 ARG DEV=false
-RUN python -m venv /py && \ 
+RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [ $DEV = "true" ]; \
@@ -21,7 +21,7 @@ RUN python -m venv /py && \
         --disabled-password \
         --no-create-home \
         django-user
-        
+
 ENV PATH="/py/bin:$PATH"
 
 USER django-user
